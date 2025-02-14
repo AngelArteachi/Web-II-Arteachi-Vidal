@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/users.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{titulo}}</h1>
+
+    <div class="users-container">
+        {% for u in users %}
+            <div class="user-card">
+                <img src="{{u.photo}}" alt="name">
+                <h3>{{u.name}}</h3>
+                <p><strong>ID:</strong> {{u.id}}</p>
+                <p><strong>Edad:</strong>{{u.age}}</p>
+                
+            </div>
+        {% endfor %}
+    </div>
+    
+</body>
+</html>
