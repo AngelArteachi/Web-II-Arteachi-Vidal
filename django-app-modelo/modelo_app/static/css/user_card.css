@@ -1,0 +1,59 @@
+/* Contenedor principal de la tarjeta */
+.user_card_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Efecto hover */
+.user_card_container:hover {
+    transform: translateY(-5px);
+}
+
+/* Imagen del usuario */
+.user_card_container img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #021325;
+    margin-right: 15px;
+}
+
+/* Información del usuario */
+.user_card_container div {
+    flex-grow: 1;
+}
+
+.user_card_container p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.user_card_container strong {
+    color: rgba(0, 0, 0, 0.945)   ;
+}
+
+/* Botón de acción */
+.user-actions a {
+    display: inline-block;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.637);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.s ease;
+}
+
+.user-actions a:hover {
+    background: rgba(0, 0, 0, 0.1);
+
+}

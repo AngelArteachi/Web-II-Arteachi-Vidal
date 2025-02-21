@@ -1,21 +1,64 @@
-h1 {
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
     text-align: center;
-    color: blue;
 }
 
-p {
-    text-align: center;
-    color: red;
-}
-
+/* Contenedor principal */
 .container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.container div {
-    text-align: center;
-    color: green;  
-    font-size: 20px;
-    border: 1px solid black;  
+/* Encabezados */
+h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.stats h2 {
+    color: #555;
+    margin: 5px 0;
+}
+
+.highlight {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Secciones */
+.orders, .questions {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.orders h2, .questions h2 {
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+/* Tarjetas de órdenes y preguntas */
+.order-card, .question-card {
+    background: #e9ecef;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.order-card p, .question-card p {
+    margin: 5px 0;
 }
