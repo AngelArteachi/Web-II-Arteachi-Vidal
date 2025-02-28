@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos</title>
+</head>
+<body>
+    <h1>Lista de Eventos</h1>
+        {% for evento in Eventos %}
+        <div class="evento-card">
+            <img src="{% static 'img/Carnaval 6.jpg' %}" alt="Imagen del evento">
+            <div class="evento-info">
+                <h2>{{ evento.name }}</h2>
+                <p><strong>Localidad:</strong> {{ evento.localidads.name }}</p>
+                <p><strong>Descripción:</strong> El carnaval de Barranquilla es una de las festividades es una de las festividades mas importantes de Colombia y uno de los carnavales mas grandes del mundo. Se celebra en la ciudad de Barranquilla, capital del departameno del Atlántico y es una festividad que combina elementos de las culturas africana, indigena y europea</p>
+            </div>
+        </div>
+        {% endfor %}
+</body>
+</html>

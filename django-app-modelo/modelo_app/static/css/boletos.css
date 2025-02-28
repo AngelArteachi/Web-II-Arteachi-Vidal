@@ -1,0 +1,104 @@
+/* Contenedor principal */
+.boletos-container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Título */
+.titulo-boletos {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Grid para los boletos */
+.boletos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Tarjeta de cada boleto */
+.boleto-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.boleto-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen del boleto */
+.boleto-card img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Información del boleto */
+.boleto-info {
+    padding: 15px;
+}
+
+.boleto-info h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.boleto-info p {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #444;
+}
+
+/* Botón de compra */
+.comprar-btn {
+    background: #e14dff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.comprar-btn:hover {
+    background: #b000e6;
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .boletos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo-boletos {
+        font-size: 1.8rem;
+    }
+
+    .boleto-info h2 {
+        font-size: 1.2rem;
+    }
+
+    .boleto-info p {
+        font-size: 0.9rem;
+    }
+}

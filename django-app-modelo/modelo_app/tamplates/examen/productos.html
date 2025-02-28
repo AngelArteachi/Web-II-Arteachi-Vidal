@@ -1,0 +1,18 @@
+{% extends "base/ebase.html" %}
+{% load static %}
+
+{% block content %}
+    <h1 class="titulo-productos">Lista de Productos</h1>
+    <div class="productos-container">
+        {% for producto in productos %}
+        <div class="producto-card">
+            <img src="{{ producto.imagen_url }}" alt="{{ producto.name }}">
+            <div class="producto-info">
+                <p><strong>Categoría:</strong> {{ producto.name }}</p>
+                <p><strong>Precio:</strong> ${{ producto.precio }}</p>
+                <button class="comprar-btn">Comprar</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

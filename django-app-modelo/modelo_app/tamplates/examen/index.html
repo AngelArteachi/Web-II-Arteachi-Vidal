@@ -1,0 +1,35 @@
+<head>
+  {% load static %}
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index</title>
+  {% include 'base/ebase.html' %}
+  <link rel="stylesheet" href="{% static 'css/eheader.css' %}">
+  <link rel="stylesheet" href="{% static 'css/evento.css' %}">
+</head>
+<body>
+  <div class="container">
+
+      <section class="gallery">
+          <img src="{% static 'img/Carnaval 1.jpg'%}" alt="Imagen 1">
+          <img src="{% static 'img/Carnaval 2.jpg'%}" alt="Imagen 2">
+          <img src="{% static 'img/Carnaval 3.jpg'%}" alt="Imagen 3">
+          <img src="{% static 'img/Carnaval 5.jpg'%}" alt="Imagen 4">
+      </section>
+  </div>
+  <div class="cont">
+      <div class="pilar-2">
+        <img src="{% static 'img/Carnaval 4.jpg'%}" alt="Foto 1">
+        <h1>Noticia</h1>
+        <h3>El carnaval de Barranquilla es una de las festividades es una de las festividades mas importantes de Colombia y uno de los carnavales mas grandes del mundo. Se celebra en la ciudad de Barranquilla, capital del departameno del Atlántico y es una festividad que combina elementos de las culturas africana, indigena y europea</h3>
+        <img src="{% static 'img/Carnaval 1.jpg'%}" alt="Foto 2">
+        <h3>El carnaval de Barranquilla es una de las festividades es una de las festividades mas importantes de Colombia y uno de los carnavales mas grandes del mundo. Se celebra en la ciudad de Barranquilla, capital del departameno del Atlántico y es una festividad que combina elementos de las culturas africana, indigena y europea</h3>
+      </div>
+      <div class="pilar-3">
+        {% include 'examen/eventos.html' with Eventos=eventos %}
+      </div>
+    </div>
+    
+</body>
+</html>

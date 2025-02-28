@@ -1,23 +1,37 @@
 {% extends "base/base.html"%}
+{% load static %}
 
     {% block content %}
-    <form method="POST" action="{% url 'createUser' %}">
+    <br>
+    <form method="POST" action="{% url 'createUser' %}" class="create-user-from" id="create-user-form">
         {% csrf_token %}
+        <input type="hidden" id="csrf_token" value="{{ csrf_token }}">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required><br>
-
+        <br>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br>
-
+        <br>
         <label for="age">Age:</label>
         <input type="number" id="age" name="age" required><br>
-
+        <br>
         <label for="rfc">RFC:</label>
         <input type="text" id="rfc" name="rfc" required><br>
-
+        <br>
         <label for="photo">Photo URL:</label>
         <input type="text" id="photo" name="photo" required><br>
 
-        <button type="submit">Create User</button>
+        <button id="create-user-button" type="button">Create User</button>
     </form>
+    {% endblock %}
+
+    {% block script %}
+
+    <script>
+        const USER_CREATE_URL = "{% url 'createUserByFetch' %}";
+    </script>
+    <script src="{% static 'js/user.js' %}">
+
+    </script>
+
     {% endblock %}

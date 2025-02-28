@@ -6,5 +6,6 @@ urlpatterns = [
     path("", views.indexUsers, name="indexusers"),
     path("create", views.createUserView, name="createuserView"),
     path("createUser", views.createUser, name="createUser"),
-    path("details-user-id/<int:id>", views.userDetail, name="userDetail")
+    path("details-user-id/<int:id>", views.userDetail, name="userDetail"),
+    path("createUserByFetch", views.createUserByFetch, name="createUserByFetch")
 ]
