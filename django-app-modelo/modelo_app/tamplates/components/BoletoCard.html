@@ -1,0 +1,9 @@
+{% load static %}
+<div class="boleto-card">
+    <img src="{% static 'img/boleto.jpg' %}" alt="Boleto">
+    <div class="boleto-info">
+        <p><strong>Tipo:</strong> {{ tipo }}</p>
+        <p><strong>Precio:</strong> ${{ precio }}</p>
+        <button class="comprar-btn">Comprar</button>
+    </div>
+</div>

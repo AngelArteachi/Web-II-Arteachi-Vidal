@@ -9,7 +9,7 @@
 
 <div class="users-container">
     {% for u in users %}
-        {% include 'components/UserCard.html' with name=u.name email=u.email id=u.id %}       
+        {% include 'components/UserCard.html' with name=boleto.name precio=boleto.precio id=boleto.id %}       
     {% endfor %}
 </div>
 {% endblock %}

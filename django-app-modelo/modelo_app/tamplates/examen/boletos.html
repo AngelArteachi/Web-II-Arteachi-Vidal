@@ -2,29 +2,11 @@
 {% load static %}
 {% block content %}
     <div class="boletos-container">
+        <a href="http://127.0.0.1:8000/examen/boletosCreate/" class="crear-btn">Crear evento</a>
         <h1 class="titulo-boletos">Boletos Disponibles</h1>
         <div class="boletos-grid">
             {% for boleto in boletos %}
-            <div class="boleto-card">
-                <img src="{% static 'img/boleto.jpg' %}" alt="Boleto">
-                <div class="boleto-info">
-                    <h2>{{ boleto.name }}</h2>
-                    <p><strong>Tipo:</strong> {{ boleto.tipo_boleto }}</p>
-                    <p><strong>Precio:</strong> ${{ boleto.precio }}</p>
-                    <button class="comprar-btn">Comprar</button>
-                </div>
-            </div>
-            {% endfor %}
-            {% for boleto in boletos %}
-            <div class="boleto-card">
-                <img src="{% static 'img/boleto.jpg' %}" alt="Boleto">
-                <div class="boleto-info">
-                    <h2>{{ boleto.name }}</h2>
-                    <p><strong>Tipo:</strong> {{ boleto.tipo_boleto }}</p>
-                    <p><strong>Precio:</strong> ${{ boleto.precio }}</p>
-                    <button class="comprar-btn">Comprar</button>
-                </div>
-            </div>
+            {% include 'components/BoletoCard.html' with tipo=boleto.tipo_boleto precio=boleto.precio %}
             {% endfor %}
         </div>
         

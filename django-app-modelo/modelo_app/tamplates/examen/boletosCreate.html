@@ -1,0 +1,61 @@
+{% extends "base/ebase.html" %}
+{% load static %}
+    
+{% block content %}
+<br>
+<link rel="stylesheet" href="{% static 'css/eventoCreate.css' %}">
+<div class="form-container">
+    <h2>Crear Nuevo Boleto</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" name="precio" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <label for="localidad">Localidad:</label>
+            <select id="localidad" name="localidad" required>
+                <option value="1">Medellín</option>
+                <option value="2">Bogotá</option>
+                <option value="3">Barranquilla</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="tipo_boleto">Tipo de Boleto:</label>
+            <select id="tipo_boleto" name="tipo_boleto" required>
+                <option value="General">General</option>
+                <option value="VIP">VIP</option>
+                <option value="Preferencial">Preferencial</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="evento">Evento:</label>
+            <input type="text" id="evento" name="evento" required>
+        </div>
+        <div class="form-group">
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" required>
+        </div>
+        <button type="submit" class="submit-btn">Crear Boleto</button>
+    </form>
+</div>
+
+<div class="table-container">
+    <h2>Boleto Recientes</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Precio</th>
+                <th>Localidad</th>
+                <th>Tipo de Boleto</th>
+                <th>Evento</th>
+                <th>Fecha</th>
+                
+            </tr>
+        </thead>
+        <tbody id="eventosTable">
+            <!-- Se llenará dinámicamente con JavaScript -->
+        </tbody>
+    </table>
+</div>
+{% endblock %}  

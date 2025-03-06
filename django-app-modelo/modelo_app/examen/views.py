@@ -45,11 +45,43 @@ def productosExamen(request):
     }
     return render(request, 'examen/productos.html', data)
 
-# def productos(request):
-#     localidad_id = request.GET.get('localidad_id')
-#     if localidad_id:
-#         productos = Producto.objects.filter(localidad_id=localidad_id)
-#     else:
-#         productos = Producto.objects.all()
+def createEvento(request):
+    data = {}
+    try:
+        if request.method == 'POST':
+            name = request.POST.get('name')
+            fecha_inicio = request.POST.get('fecha_inicio')
+            fecha_fin = request.POST.get('fecha_fin')
+            localidad = request.POST.get('localidad')
 
-#     return render(request, 'examen/productos.html', {'productos': productos})
+            evento = Evento(name=name, fecha_inicio=fecha_inicio, fecha_fin=fecha_fin, localidad=localidad)
+            evento.save()
+            data["evento"] = evento 
+            data["message"] = "Evento Creado"
+            data["status"] = "success"
+    except Exception as e:
+        data["message"] = str(e)
+        data["status"] = "error"
+
+    return render(request, 'examen/eventosCreate.html', data)
+
+def createBoleto(request):
+    data = {}
+    try:
+        if request.method == 'POST':
+            precio = request.POST.get('precio')
+            localidad = request.POST.get('localidad')
+            tipo_boleto = request.POST.get('tipo_boleto')
+            evento = request.POST.get('evento')
+            fecha = request.POST.get('fecha')
+
+            boleto = Boleto(precio=precio, localidad=localidad, tipo_boleto=tipo_boleto, evento=evento, fecha=fecha)
+            boleto.save()
+            data["boleto"] = boleto 
+            data["message"] = "Boleto Creado"
+            data["status"] = "success"
+    except Exception as e:
+        data["message"] = str(e)
+        data["status"] = "error"
+
+    return render(request, 'examen/boletosCreate.html', data)
